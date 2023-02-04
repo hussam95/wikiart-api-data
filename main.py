@@ -12,7 +12,7 @@ working_dir = os.getcwd()
 artists = get_artists(artists_endpoint, num_pages=1)
 
 # Get painting ids
-paintings_data_all_artists = get_paintings(artists[:3], paintings_by_artists_endpoint)
+paintings_data_all_artists = get_paintings(artists, paintings_by_artists_endpoint)
 
 # Get painting details
 complete_data_all_artists = get_painting_details(paintings_data_all_artists, paintings_endpoint)
