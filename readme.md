@@ -1,5 +1,5 @@
 # Introduction
-This repository contains a python script that downloads images of artworks and their information from [WikiArt](https://www.wikiart.org/) and saves the images in a directory called images and the information in a CSV file called paintings.csv, in the working directory. The user can control the number of artists they want to download images for by changing the num_pages parameter in the function get_artists() in the main.py file.
+This repository contains a python script that downloads images of artworks and their information from [WikiArt](https://www.wikiart.org/) and saves the images in a directory called images and the information in a CSV file called artworks.csv, in the working directory. The user can control the number of artists they want to download images for by changing the num_pages parameter in the function get_artists() in the main.py file.
 
 # Requirements
 To run this script, you will need the following python packages:
@@ -25,7 +25,7 @@ $ cd wikiart-api-data
 ```
 $ pip install -r requirements.txt
 ```
-3. Update the API key in the auth.py file. You can get you API key and Access key [here](https://www.wikiart.org/en/App/GetApi) 
+3. Update the API key in the auth.py file. You can get you API key and Access key [here](https://www.wikiart.org/en/App/GetApi)
 
 4. Run the script
 ```
@@ -36,13 +36,13 @@ $ python main.py
 # Details
 The script consists of three main files: main.py, api_calls.py, and auth.py.
 
-main.py is the entry point of the script. It calls the functions defined in api_calls.py to get the artists, paintings, and painting details from the WikiArt API and saves the images and information to disk.
+`main.py` is the entry point of the script. It calls the functions defined in api_calls.py to get the artists, paintings, and painting details from the WikiArt API and saves the images and information to disk.
 
-api_calls.py contains the functions that make API calls to the WikiArt API to retrieve the artists, paintings, and painting details.
+`api_calls.py` contains the functions that make API calls to the WikiArt API endpoints to retrieve the artists, paintings, and painting details.
 
-auth.py contains the authentication information needed to access the WikiArt API.
+`auth.py` contains the authentication information needed to access the WikiArt API.
 
-The user can control the number of artists they want to download images for by changing the num_pages parameter in the function get_artists() in the main.py file. By default, the script downloads images of 60 artists per page.
+The user can control the number of artists they want to download images for by changing the num_pages parameter in the function get_artists() in the main.py file. By default, the script downloads images of 60 artists per page. So, if you have set num_pages to 1, it will fetch all available images of 60 artists. To get data for fewer than 60 artists, you can use slicing on the first argument of the `get_paintings()` method in the `main.py module`. This will allow you to fetch only a specific subset of paintings for artists defined by the slicing. 
 
 The script uses the WikiArt API to retrieve the data and images. WikiArt is a digital library of fine art that provides access to high-quality images and information about artworks from various cultures and time periods.
 
